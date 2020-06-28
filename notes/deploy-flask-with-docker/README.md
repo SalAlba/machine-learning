@@ -5,16 +5,16 @@ title: Deploy Flask With Docker
 banner: './images/flask-docker.jpeg'
 published: true
 ---
-
-# Deploy Flask With Docker
-
-so Deploy Flask With Docker bla bla
-
 ### Table of contents
 
 - [start](#start)
 - [info](#info)
 - [summary](#summary)
+# Deploy Flask With Docker
+
+so Deploy Flask With Docker bla bla
+
+
 
 ## start
 ada
