@@ -7,7 +7,7 @@ published: true
 ---
 
 # Deploy Flask With Docker
-In this post we will see how to use Docker to deploy Flask app on production, share our app with others and more :heart:.
+In this post we will see how to use Docker to deploy Flask app on production, share our app with others and more :heart:. Also I'm sending a huge thanks to [[m-godlewski]](https://github.com/m-godlewski).
 
 > ⚠️ **TODO** What is Flask
 
@@ -32,12 +32,74 @@ In this post we will see how to use Docker to deploy Flask app on production, sh
 
 
 ## Prerequisites
-- installed docker 🐋 on machine.
++ Linux, Ubuntu 20. forget about windows 🤭.
++ Installed docker 🐋 on machine.
 
-## Install Docker
+## Install Docker 
 
-### Linux
-> ⚠️ TODO ...
+### Linux [[1]](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) [[2]](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+
+There are many ways to install docker on ubuntu system check [official documentation](https://docs.docker.com/engine/install/ubuntu/) in this tutorial I will present installation using the repository.
+
+```bash
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+   
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+$ sudo apt-key fingerprint 0EBFCD88
+
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+$ sudo apt update
+
+
+# Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+$ apt-cache policy docker-ce
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+```
+
+> Check if docker installed.
+
+``` bash
+
+$ sudo systemctl status docker
+$ services docker status
+
+
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2020-07-10 14:09:27 CEST; 49s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 28710 (dockerd)
+      Tasks: 13
+     Memory: 44.5M
+     CGroup: /system.slice/docker.service
+             └─28710 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+
+```
+
+> Check if docker is installed correctly by running the hello-world image.
+
+``` bash
+$ sudo docker run hello-world
+```
+
 
 ### Windows
 > ⚠️ TODO ...
@@ -49,14 +111,14 @@ In this post we will see how to use Docker to deploy Flask app on production, sh
 Flask allow us to build application in very simple way just we need latest [Python](https://www.python.org/downloads/) and installed [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#installation). Bellow example of basic Flask application.
 
 ``` python
-# application.py
+# __init__.py
 
 from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, World!\n'
 
 @app.route('/add/<int:a>/<int:b>')
 def add(a, b):
@@ -64,15 +126,13 @@ def add(a, b):
 
 # run the application ...
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0') # This important to get access into docker
 
 ```
 
 To run this application there are several ways covered on [flask documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/#quickstart), I will use just the basic one show bellow.
 
 ``` bash
-# bash
-
 $ python application.py
 ```
 
@@ -95,33 +155,74 @@ Whenever you start and want to deploy flask application to production, you must 
 
 FROM python:3.6-alpine
 
-RUN adduser -D userAppliaction
+RUN apk --update add bash vim
+ENV ENV_VARIABLE_FROM_DOCKER ENV_VARIABLE_VALUE
 
-WORKDIR /home/dirAppliaction
-
+COPY __init__.py __init__.py
 COPY requirements.txt requirements.txt
-RUN python -m venv venv
-RUN venv/bin/pip install -r requirements.txt
-RUN venv/bin/pip install gunicorn
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python"]
+CMD ["run_app.py"]
+```
+
+1. `FROM python:3.6-alpine` install python from [DockerHub](https://hub.docker.com/_/python).
+2. `RUN apk --update add bash nano` install vim text editor, we can use it when we inside the container [see more](#).
+3. `ENV ENV_VARIABLE_FROM_DOCKER ENV_VARIABLE_VALUE` environment variable for this docker image.
+4. `COPY __init__.py __init__.py` copy the flask app, you can copy whole folder.
+5. `COPY requirements.txt requirements.txt` copy the requirements file into docker.
+6. `RUN pip install -r requirements.txt` install all required python package.
+7. `ENTRYPOINT ["python"]` `CMD ["run_app.py"]` run flask app in container.
 
 
-COPY appliaction.py Dockerfile boot.sh ./
-RUN chmod +x boot.sh
+``` bash
+# docker build -t <IMAGE_NAME> .
 
-ENV FLASK_APP appliaction.py
+$ docker build -t my_image_name:latest .
+```
 
-RUN chown -R appliaction:appliaction ./
-USER appliaction
+1. Sets the name and tag for the new container image.
+2. the dot `.` indicates the base directory where the container is to be built. This is the directory where the Dockerfile is located. 
 
-EXPOSE 5000
-ENTRYPOINT ["./boot.sh"]
+check images list
 
+``` bash
+$ docker images -a
+
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+my_image_name       latest              af73b3cf6a99        About a minute ago   110MB
+```
+
+``` bash
+# docker run -p 8080:5000 -d --name <CONTAINER_NAME> <IMAGE_NAME>
+
+$ docker run -p 8080:5000 -d --name my_container_name my_image_name
+```
+1. `-p` set ports.
+2. `-d` the container runs as a foreground application, blocking your command prompt. 
+3. `--name` name of the container
+
+
+In terminal check if container app is running
+
+``` bash
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS              PORTS                    NAMES
+d859fc976bff        my_container_name                 "python __init__.py"   8 seconds ago       Up 5 seconds        0.0.0.0:8080->5000/tcp   app
+
+```
+also check by curl or in browser
+
+``` bash
+$ curl 0.0.0.0:8080
+
+Hello, World!
 ```
 
 
-
 ## tl;dr
-TODO ...
+List of docker examples [available here.](https://github.com/SalAlba/machine-learning/tree/master/notes/deploy-flask-with-docker/demo)
 
 ## Summarizing
 ### Advantage / Disadvantage ➕ ➖
