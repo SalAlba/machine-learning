@@ -1,7 +1,7 @@
 FROM python:3.6-alpine
 
 RUN apk --update add bash vim
-ENV STATIC_URL /static
+ENV ENV_VARIABLE_FROM_DOCKER "Hello, World!"
 
 COPY app /app
 COPY run_app.py run_app.py
