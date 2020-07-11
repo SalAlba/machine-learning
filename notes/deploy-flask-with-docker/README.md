@@ -220,6 +220,13 @@ $ curl 0.0.0.0:8080
 Hello, World!
 ```
 
+> ⚠️ If you are working on machine locally don't forget to stop the containers working in background by running the command
+
+``` bash
+# $ docker stop <CONTAINER_NAME>
+
+$ docker stop my_container_name
+```
 
 ## tl;dr
 List of docker examples [available here.](https://github.com/SalAlba/machine-learning/tree/master/notes/deploy-flask-with-docker/demo)
