@@ -21,14 +21,14 @@ In this post we will see how to use Docker to deploy Flask app on production, sh
 > ⚠️**TODO** In this tutorial, you will create a Flask application and deploy it with Docker. This tutorial will also cover how to update an application after deployment.
 ## Table of contents
 
-- [Prerequisites](#Prerequisites)
+- [Prerequisites](#prerequisites)
 - [Install Docker](#install-docker)
 - [Simple Flask Application](#simple-flask-application)
 - [Build Image of Container](#build-image-of-container)
+- [Run Container](#run-container)
 - [tl;dr](#)
-- [Summarizing](#Summarizing)
-- [Resources](#Resources)
-- [TODO](#TODO)
+- [Summarizing](#summarizing)
+- [Resources](#resources)
 
 
 ## Prerequisites
@@ -193,6 +193,8 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 my_image_name       latest              af73b3cf6a99        About a minute ago   110MB
 ```
 
+## Run Container
+
 ``` bash
 # docker run -p 8080:5000 -d --name <CONTAINER_NAME> <IMAGE_NAME>
 
@@ -220,7 +222,7 @@ $ curl 0.0.0.0:8080
 Hello, World!
 ```
 
-> ⚠️ If you are working on machine locally don't forget to stop the containers working in background by running the command
+> ⚠️ If you are working on machine locally don't forget to stop the containers working in the background by running the command
 
 ``` bash
 # $ docker stop <CONTAINER_NAME>
@@ -250,6 +252,3 @@ TODO ...
 2. [[1.2.] MarkDown TOC](https://github.com/jonschlinkert/markdown-toc/blob/master/README.md)
 3. [[1.3.] Languages Supported by Github Flavored Markdown](http://www.rubycoloredglasses.com/2013/04/languages-supported-by-github-flavored-markdown/)
  -->
-
-## TODO
-...
