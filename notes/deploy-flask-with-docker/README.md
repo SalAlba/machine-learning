@@ -7,11 +7,11 @@ published: true
 ---
 
 # Deploy Flask With Docker
-In this post we will see how to use Docker to deploy Flask app on production, share our app with others and more :heart:. Also I'm sending a huge thanks to [[m-godlewski]](https://github.com/m-godlewski).
+In this post we will see how to use Docker to deploy Flask app on production, share our app with others and :heart:. Also I'm sending a huge thanks to [[m-godlewski]](https://github.com/m-godlewski).
 
-> ⚠️ **TODO** What is Flask
+**Flask** is micro web framework allowing to build web application very fast without needing extra tools or libraries.
 
-> ⚠️ **TODO** What is Docker
+**Docker** is a set of platform deliver application in packages called container.
 
 > ⚠️ **TODO** What is Image
 
@@ -21,15 +21,20 @@ In this post we will see how to use Docker to deploy Flask app on production, sh
 > ⚠️**TODO** In this tutorial, you will create a Flask application and deploy it with Docker. This tutorial will also cover how to update an application after deployment.
 ## Table of contents
 
+- [tl;dr](#)
 - [Prerequisites](#prerequisites)
 - [Install Docker](#install-docker)
 - [Simple Flask Application](#simple-flask-application)
 - [Build Image of Container](#build-image-of-container)
 - [Run Container](#run-container)
-- [tl;dr](#)
+- [Update an application after deployment](#update-an-application-after-deployment)
+- []
 - [Summarizing](#summarizing)
 - [Resources](#resources)
 
+
+## tl;dr
+List of docker examples [available here.](https://github.com/SalAlba/machine-learning/tree/master/notes/deploy-flask-with-docker/demo)
 
 ## Prerequisites
 + Linux, Ubuntu 20. forget about windows 🤭.
@@ -231,15 +236,28 @@ Hello, World!
 $ docker stop my_container_name
 ```
 
-## tl;dr
-List of docker examples [available here.](https://github.com/SalAlba/machine-learning/tree/master/notes/deploy-flask-with-docker/demo)
+## Update an application after deployment.
+> TODO ...
+
+## CI/DI
+How to setup continuous deployment of a website on a VPS using GitHub Actions
+> TODO [[1]](https://dev.to/knowbee/how-to-setup-continuous-deployment-of-a-website-on-a-vps-using-github-actions-54im)
 
 ## Summarizing
 ### Advantage / Disadvantage ➕ ➖
-TODO ... :blush:
+1. Docker allow to serve applications and modules in safe, cross-platform and fast way to production.
+2. Docker allow to save important information like passwords in the environment ex.
+``` bash
+ENV ENV_VARIABLE_FROM_DOCKER ENV_VARIABLE_FROM_DOCKER_BLA_BLA
+```
+3. ...
 
 ### Notes
-TODO ...
+1. In Dockerfile when you want to copy folder to container don't forget to add slash `/` before folder name ex.
+``` bash
+COPY app /app
+``` 
+2. ...
 
 ## Resources
 
