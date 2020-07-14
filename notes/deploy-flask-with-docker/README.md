@@ -107,7 +107,8 @@ $ sudo docker run hello-world
 ### others 😩
 > ⚠️ TODO ...
 
-## Simple Flask Application [[1.2.]](#Resources)
+## Simple Flask Application
+[[1.2.]](#Resources)
 Flask allow us to build application in very simple way just we need latest [Python](https://www.python.org/downloads/) and installed [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/#installation). Bellow example of basic Flask application.
 
 ``` python
