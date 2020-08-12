@@ -36,6 +36,18 @@
 
 5. What's Gradient Descent ?
 
++ Gradient descent measures the local gradient of the error function with regards to the parameter vector θ.
+
++ When gradient is zero you are in the bottom (the minimum), keep in minde could be many minimums local and global.
+
++ An important parameter in Gradient Descent is the size of the steps, determined by
+the learning rate hyperparameter.
+
+**Resources**
+
+* [[src1] Hands on ML with tens. and sklearn](#)
+* [[src2]](https://medium.com/@rrfd/what-is-a-cost-function-gradient-descent-examples-with-python-16273460d634)
+
 6. What's vector ? Why we want vector ?
 
 7. What's normal distribution ? Why, How, Where, What ?
