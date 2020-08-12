@@ -9,6 +9,33 @@
 
    * [[src1]](https://youtu.be/NkOv_k7r6no?t=188)
 
-4. What is gradient ? Why we use gradient ? What gradient tell us ?
+4. What's gradient ? Why we use gradient ? What gradient tell us ?
 
-5. What is Gradient Descent ?
+**Gradient** of any function `[src2]` is a vector with its partial derivatives.
+
+**Gradient** `[src3]` is talk about change. this slope telling us how quickly is change, by finding the gradient of the that graph bellow we know how quickly is changing.
+
+<img src="https://raw.githubusercontent.com/SalAlba/machine-learning/master/topics/images/1.png" >
+
+
+**Gradient** `[src4]` is another word for "slope". The higher the gradient of a graph at a point, the steeper the line is at that point.
+
++ A positive gradient means that the line slopes goind upwards.
++ A negative gradient means that the line slopes downwards.
+
+
+**Reosurces**
+
+* **COME BACK** [[src1] Math > Multivariable calculus > Derivatives of multivariable functions > Gradient and directional derivatives > Gradient](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient)
+
+* [[src2]](https://youtu.be/tIpKfDc295M?t=166)
+
+* [[src3]](https://www.youtube.com/watch?v=6zgBUZuC-p8)
+
+* [[src4]](https://revisionmaths.com/gcse-maths-revision/algebra/gradients-and-graphs)
+
+5. What's Gradient Descent ?
+
+6. What's vector ? Why we want vector ?
+
+7. What's normal distribution ? Why, How, Where, What ?
