@@ -1,15 +1,15 @@
 # Questions
 
-1. What's loss function and cost functions ? are they same ?
+## 1. What's loss function and cost functions ? are they same ?
    * [[src1]](https://youtu.be/SHEPb1JHw5o?t=441)
  
-2. What loss function give us ? What cost function give us ? What is the use of this functions ?
+## 2. What loss function give us ? What cost function give us ? What is the use of this functions ?
  
-3. If we have neural network with tow layers, first have 3 neu. second 1 neu, and we apply a linear function for first layer and sigmoid func. for second layer, we end up with a simple logistic regression algorithm, in another word the neural network change into logistic regression.
+## 3. If we have neural network with tow layers, first have 3 neu. second 1 neu, and we apply a linear function for first layer and sigmoid func. for second layer, we end up with a simple logistic regression algorithm, in another word the neural network change into logistic regression.
 
    * [[src1]](https://youtu.be/NkOv_k7r6no?t=188)
 
-4. What's gradient ? Why we use gradient ? What gradient tell us ?
+## 4. What's gradient ? Why we use gradient ? What gradient tell us ?
 
 **Gradient** of any function `[src2]` is a vector with its partial derivatives.
 
@@ -34,7 +34,7 @@
 
 * [[src4]](https://revisionmaths.com/gcse-maths-revision/algebra/gradients-and-graphs)
 
-5. What's Gradient Descent ?
+## 5. What's Gradient Descent ?
 
 + Gradient descent measures the local gradient of the error function with regards to the parameter vector θ.
 
@@ -48,6 +48,12 @@ the learning rate hyperparameter.
 * [[src1] Hands on ML with tens. and sklearn](#)
 * [[src2]](https://medium.com/@rrfd/what-is-a-cost-function-gradient-descent-examples-with-python-16273460d634)
 
-6. What's vector ? Why we want vector ?
+## 6. What's vector ? Why we want vector ?
 
-7. What's normal distribution ? Why, How, Where, What ?
+## 7. What's normal distribution ? Why, How, Where, What ?
+
+
+## 8. Iterators vs. Generators in Python
+
+**Resources**
+* [[src1]](https://www.youtube.com/watch?v=u0JnTdAcGns)
