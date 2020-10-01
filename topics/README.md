@@ -57,3 +57,10 @@ the learning rate hyperparameter.
 
 **Resources**
 * [[src1]](https://www.youtube.com/watch?v=u0JnTdAcGns)
+
+
+## 9. How to build NLP model that generalizes? and how to train/validat/test ?
+
+
+**Resources**
+* [[src1]](kdnuggets.com/2019/01/solve-90-nlp-problems-step-by-step-guide.html)
