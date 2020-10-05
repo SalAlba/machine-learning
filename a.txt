@@ -1,3 +1,2 @@
 just test
-
-show me conflict
+fixed no conflicts
