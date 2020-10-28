@@ -62,7 +62,34 @@ A step by step series of examples that tell you how to get a development env run
 TODO ...
 
 ## Virtual environment
-TODO ...
+### First way
+``` bash
+  $ python -m venv <VIRTUAL_ENVIRONMENT_NAME>
+
+  # ex.
+  $ python -m venv venv
+  $ python -m venv my_env
+```
+
+activate/deactivate virtual environment on `linux`&`macOS`
+``` bash
+  $ source path/to/my_env/bin/activate
+
+  # ex.
+  $ source venv/bin/activate
+  
+  $ deactivate
+```
+
+activate/deactivate virtual environment on `windows`
+``` bash
+  $ path/to/my_env/Script/activate
+
+  # ex.
+  $ source venv/Script/activate
+  
+  $ deactivate
+```
 
 ## Install packages
 A python package is a collection of modules. Modules that are related to each other are mainly put in the same package. When a module from an external package is required in a program, that package can be imported and its modules can be put to use. [[2.5.]](#Resources)
