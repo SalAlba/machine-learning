@@ -1,6 +1,7 @@
 # Learn Python
 [![License](https://img.shields.io/github/license/salalba/matplotlib)](https://github.com/SalAlba/matplotlib/blob/master/LICENSE)
-This project aims to introduce the Python programming language,we will go deep and explore python fetures.
+This project aims to introduce the Python programming language,we will go deep and explore python features.
+:warning: information/data in `<` `>` should be changed :warning:
 
 ## Authors
 
@@ -14,9 +15,15 @@ See also the list of [contributors](https://github.com/your/project/contributors
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
 + [Install python](#Install-python)
+  - [Linux/Ubuntu](#)
+  - [MacOS](#)
+  - [Windows](#)
++ [Virtual environment](#Virtual-environment)
++ [Install packages](#Install-packages)
+  - [Pip](#)
+  - [Conda](#)
 + [Quick start](#Quick-start)
 + [Scalar types](#Scalar-types)
-+ [...](#)
 + [...](#)
 + [...](#)
 + [...](#)
@@ -38,6 +45,8 @@ These instructions will get you a copy of the project up and running on your loc
 + Python >= 3.*.
 + pip3.
 
+> :warning: information/data in `<` `>` should be changed :warning:
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
@@ -52,6 +61,125 @@ A step by step series of examples that tell you how to get a development env run
 ## Install Python
 TODO ...
 
+## Virtual environment
+TODO ...
+
+## Install packages
+A python package is a collection of modules. Modules that are related to each other are mainly put in the same package. When a module from an external package is required in a program, that package can be imported and its modules can be put to use. [[2.5.]](#Resources)
+
+> Any Python file, whose name is the module’s name property without the .py extension, is a module.
+
+### pip. PyPI
+pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes. [[2.6.]](#Resources)
+
++ [pip - The Python Package Installer :heart:](https://pip.pypa.io/en/stable/)
++ [Installation](https://pip.pypa.io/en/stable/installing.html)
++ [Usage](https://pip.pypa.io/en/stable/)
+
+To install python package 
+
+:warning: information/data in `<` `>` should be changed :warning:
+
+``` bash
+  $ pip install <PACKAGE_NAME>
+  [...]
+  Successfully installed PACKAGE_NAME
+
+  # ex. of installing package pandas
+  $ pip install pandas
+
+  $ pip install PACKAGE_NAME            # latest version
+  $ pip install PACKAGE_NAME==1.0.4     # specific version
+  $ pip install 'PACKAGE_NAME>=1.0.4'   # minimum version
+  $ pip install -r requirements.txt     # requirements files
+```
+
+Install python package from file, This is useful if the target machine does not have a network connection:
+
+``` bash
+  $ pip install <PACKAGE_NAME.whl>
+  [...]
+  Successfully installed PACKAGE_NAME
+```
+
+> TODO install python package without network and with multi relation with another packages
+> TODO install python package on Linux user account don't have permission
+
+
+show list of all packages installed 
+``` bash
+  $ pip list
+  $ pip list --outdated
+```
+
+Show what files were installed:
+``` bash
+  $ pip show <PACKAGE_NAME>
+
+  $ pip show --files <PACKAGE_NAME>
+```
+
+Upgrade a package:
+``` bash
+  $ pip install --upgrade <PACKAGE_NAME>
+```
+
+Uninstall a package:
+``` bash
+  $ pip uninstall <PACKAGE_NAME>
+```
+
+
+### Conda
+
+``` bash
+  $ conda install <PACKAGE_NAME>
+  [...]
+  Successfully installed PACKAGE_NAME
+
+  # ex. of installing package pandas
+  $ conda install pandas
+```
+
+Install python package from file, This is useful if the target machine does not have a network connection:
+
+``` bash
+  $ conda install <PACKAGE_NAME.whl>
+  [...]
+  Successfully installed PACKAGE_NAME
+```
+
+> TODO install python package without network and with multi relation with another packages
+
+
+show list of all packages installed 
+``` bash
+  $ conda list
+```
+
+Show what files were installed:
+``` bash
+  $ conda show <PACKAGE_NAME>
+```
+
+Upgrade a package:
+``` bash
+  $ conda install --upgrade <PACKAGE_NAME>
+```
+
+Uninstall a package:
+``` bash
+  $ conda uninstall <PACKAGE_NAME>
+```
+
+In case you have user account on linux machine with limit permissions do this
+``` bash
+  $ cd ~
+  $ /opt/anaconda3/bin/conda create -n my_root --clone=/opt/anaconda3
+  $ ~/.conda/envs/my_root/bin/python
+  $ ~/.conda/envs/my_root/bin/conda install pandas
+  $ ~/.conda/envs/my_root/bin/conda update --all
+```  
 
 ## Quick start
 TODO ...
@@ -77,6 +205,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### 2. Websites
 + [[2.0.] ...](#)
++ [[2.1.] Python's documentation](https://www.python.org/doc/)
++ [[2.2.] Python Notes](https://jpt-pynotes.readthedocs.io/en/latest/index.html)
++ [[2.3.] Learn Python Programming](https://www.programiz.com/python-programming)
++ [[2.5.] What are Python packages?](https://www.educative.io/edpresso/what-are-python-packages)
++ [[2.6.] pip. PyPI](https://pypi.org/project/pip/)
+
 
 ### 3. Youtube
 + [[3.0.] Owner of the chanel | Chanel name | Tutorial name ](#)
