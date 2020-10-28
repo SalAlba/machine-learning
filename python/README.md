@@ -257,7 +257,7 @@ print(tuple_b)
 **list vs tuple**
 > list are mutable (we can change the values in list).
 
-> tuple are immutable (we can't change the values in list).
+> tuple are immutable (we can't change the values in tuple).
 
 ``` python
 
