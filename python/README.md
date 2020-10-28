@@ -24,7 +24,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
   - [Conda](#)
 + [Quick start](#Quick-start)
 + [Scalar types](#Scalar-types)
-+ [...](#)
++ [**Lists, Tuples, Dictionaries.**](#Lists-Tuples-Dictionaries)
 + [...](#)
 + [...](#)
 + [...](#)
@@ -182,9 +182,193 @@ In case you have user account on linux machine with limit permissions do this
 ```  
 
 ## Quick start
-TODO ...
+
+[**Scalar types**](#Scalar-types) Scalar types, have integers (ex. 1, 5, -12), float numbers (ex. 3.14, $5e^{-16} = 5 . 10^{-16}$), strings (ex. 'hi there') and boolean variables (True, False)
 
 
+[**Variables**](#) we can use variables to store different (any) values like numbers, strings, objects, we create variables using operator equal `=`, ex. below show how to create variable called `x` storing integer value.
+
+``` python
+x = 2
+print(x)
+print(x + 3)
+```
+
+
+> A variable name must start with a letter or the underscore character
+> A variable name cannot start with a number
+> A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+> Variable names are case-sensitive (age, Age and AGE are three different variables)
+
+
+[**Strings**](#) are sequences of characters, in Python3 case they are full Unicode.
+
+``` python
+
+str1 = "Hi There!"
+
+str2 = 'Hi There!'
+
+str3 = '''
+  Hi there
+  What to do      
+  '''
+
+str4 = """
+  Hi there
+  What to do      
+  """
+
+print(str1)
+print(str2)
+print(str3)
+print(str4)
+```
+
+
+[**Lists, Tuples, Dictionaries.**](#Lists-Tuples-Dictionaries) objects which can store collections
+
+**Lists**
+``` python
+
+list_a = [1,2,3]
+print(list_a)
+
+list_b = [1,'a',3, 'd']
+print(list_b)
+```
+
+**Tuples**
+``` python
+
+# ex.1.
+tuple_a = 1, 2, 3
+print(tuple_a)
+
+# ex.2.
+tuple_b = (1, 2, 3)
+print(tuple_b)
+
+```
+
+**list vs tuple**
+> list are mutable (we can change the values in list).
+> tuple are immutable (we can't change the values in list).
+
+``` python
+
+# lists
+list_a = [1,2,3]
+print(list_a[1])  # 2
+list_a[1] = 55    # mutable
+print(list_a[1])  # 5
+
+
+# tuples
+tuple_a = 1, 2, 3
+print(tuple_a[1]) # 2
+# tuple_a[1] = 55 # immutable
+# print(tuple_a[1])
+
+# TypeError: 'tuple' object does not support item assignment
+
+```
+
+**Dicts**
+``` python
+dict_a = {
+  'key_1': 'value_1',
+  'key_2': 2,
+  'key_3': True,
+  'key_4': [],
+  'key_5': {},
+  'key_6': (),
+  'key_7': object,
+  'key_8': None,
+  9: 9,
+  10: 10,
+}
+
+print(dict_a)
+```
+
+**Sets**
+```python
+set_a = {'ada', 1, 'ada', 9, False, 'b'}
+print(set_a)
+```
+
+> sets save just the unique values, in ex. above will be just one `ada`.
+
+[**Control Flow**](#)
+```python
+x = 2
+if x > 1:
+  print('more than 1')
+
+if x == 1:
+  print('equal 1')
+else:
+  print('not equal')
+```
+
+[**loops**](#)
+``` python
+for i in range(4):
+  print(i)
+```
+
+``` python
+for i in [4,6,8,9]:
+  print(i)
+```
+
+``` python
+x = 3
+while x > 0:
+  print(x)
+  x -= 1
+```
+
+[**Functions**](#)
+``` python
+def func_1():
+  print('Hi there')
+
+func_1()
+```
+
+```python
+def pow_2(arg1):
+  return arg1**2
+
+r = pow_2(4)
+print(r)
+```
+
+```python
+def sum(arg1, arg2):
+  return arg1 + arg2
+
+r = sum(3,6)
+print(r)
+```
+
+```python
+def func_2(arg1, arg2, *args, **kwargs):
+  print(arg1)
+  print(arg2)
+  print(args)
+  print(kwargs)
+
+
+func_2('ada', 33)
+
+func_2('ada', 33, False, 44)
+
+func_2('ada', 33, show=False, age=44)
+
+```
 ## Scalar types
 TODO ...
 
@@ -193,6 +377,9 @@ TODO ...
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details, Copyright 2020 © <a href="https://github.com/SalAlba/" target="_blank">Salem Albarudy</a>.
 
+
+## Lists, Tuples, Dictionaries.
+TODO ...
 
 ## Resources
 
