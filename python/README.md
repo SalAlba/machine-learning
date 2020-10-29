@@ -59,10 +59,56 @@ A step by step series of examples that tell you how to get a development env run
 ```
 
 ## Install Python
-TODO ...
+
+### Check Python version
+
+**Linux/Ubuntu** open the terminal and print, in case if you don't have any information print it mean your machine don't have any python version and you have to install one :smile:.
+
+``` bash
+  $ python --version
+  # output >> Python 3.8.5
+```
+
+check where is installed
+
+``` bash
+  $ whereis python
+
+  # output
+  # python: 
+  #   /usr/bin/python2.7
+  #   /usr/bin/python
+  #   /usr/bin/python3.8-config
+  #   /usr/bin/python3.8
+  #   /usr/bin/python2.7-config
+  #   /usr/lib/python2.7
+  #   /etc/python2.7
+  #   /etc/python3.8
+  #   /usr/local/lib/python2.7
+  #   /usr/local/lib/python3.8
+  #   /usr/include/python3.8
+```
+
+
+**MacOs** open the terminal and print, in case if you don't have any information print it mean your machine don't have any python version and you have to install one :smile:.
+
+``` bash
+  $ python --version
+  # output >> Python 3.8.5
+```
+
+**Windows** open the CMD (command line),  in case if you don't have any information print it mean your machine don't have any python version and you have to install one :smile:.
+
+``` bash
+  > python --version
+  # output >> Python 3.8.5
+```
 
 ## Virtual environment
-### First way
+
+### First way [Linux/Ubuntu][MacOS][Windows]
+:warning: You should have installed a Python version on your machine, if have install just conda on machine could be not enough for some operating system like windows. to be sure you have to [check Python version](#check-Python-version)
+
 ``` bash
   $ python -m venv <VIRTUAL_ENVIRONMENT_NAME>
 
@@ -90,6 +136,43 @@ activate/deactivate virtual environment on `windows`
   
   $ deactivate
 ```
+
+### Second way using anaconda [Linux/Ubuntu][MacOS][Windows]
+
+open anaconda prompt and do the stuff bellow.
+
+> By default, environments are installed into the envs directory in your conda directory.
+
+``` bash
+  $ conda create --name <VIRTUAL_ENVIRONMENT_NAME>
+
+  # ex.
+  $ conda create --name my_env_name
+```
+
+To create an environment with a specific version of Python.
+
+``` bash
+  $ conda create -n my_env_name python=3.6
+```
+
+Specifying a location for an environment.
+
+``` bash
+  $ conda create --prefix ./my_env_name
+```
+
+
+activate/deactivate virtual environment on `linux`&`macOS`&`windows`
+``` bash
+  $ conda activate <VIRTUAL_ENVIRONMENT_NAME>
+
+  # ex.
+  $ conda activate my_env_name
+  
+  $ conda deactivate
+```
+
 
 ## Install packages
 A python package is a collection of modules. Modules that are related to each other are mainly put in the same package. When a module from an external package is required in a program, that package can be imported and its modules can be put to use. [[2.5.]](#Resources)
