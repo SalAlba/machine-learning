@@ -24,7 +24,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
   - [Conda](#)
 + [Quick start](#Quick-start)
 + [Scalar types](#Scalar-types)
-+ [**Lists, Tuples, Dictionaries.**](#Lists-Tuples-Dictionaries)
++ [Lists, Tuples, Dictionaries.](#Lists-Tuples-Dictionaries)
 + [...](#)
 + [...](#)
 + [...](#)
@@ -486,14 +486,166 @@ func_2('ada', 33, show=False, age=44)
 ## Scalar types
 TODO ...
 
+https://stackoverflow.com/questions/30340555/are-numbers-considered-objects-in-python
+
+https://stackoverflow.com/questions/15376509/when-is-i-x-different-from-i-i-x-in-python/15376520#15376520
+
+https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
+
+
+
+``` python
+int_ = 123
+float_ = 3.14
+
+
+print(int_)
+print(type(int_))
+print(isinstance(int_, object))
+print()
+
+
+print(float_)
+print(type(float_))
+print(isinstance(float_, object))
+print()
+
+
+```
+
+
+
+
+'''
+int_ = 123
+float_ = 3.14
+complex_ = 1 + 2j
+str_ = 'ada'
+
+
+print(int_)
+print(type(int_))
+print('Is object :', isinstance(int_, object))
+print()
+
+
+print(float_)
+print(type(float_))
+print('Is object :', isinstance(float_, object))
+print()
+
+print(complex_)
+print(type(complex_))
+print('Is object :', isinstance(complex_, object))
+print()
+
+
+print(str_)
+print(type(str_))
+print('Is object :', isinstance(str_, object))
+print()
+
+# def f(x):
+#     x = 2
+#     return x
+
+# z = 3
+
+
+# print(z)
+# f(z)
+# print(z)
+
+import sys
+
+a = sys.maxsize
+
+print(a)
+print(type(a))
+print('Is object :', isinstance(a, object))
+
+
+a = 2 ** 128 # in mem is bigint
+
+print(a)
+print(type(a))
+print('Is object :', isinstance(a, object))
+
+
+print(type(1))
+print(type(1.))
+
+'''
+
+
+# https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
+# print('0%3 : ', 0%3)
+# print('1%3 : ', 1%3)
+# print('2%3 : ', 2%3)
+# print('3%3 : ', 3%3)
+# print('4%3 : ', 4%3)
+# print('5%3 : ', 5%3)
+# print('6%3 : ', 6%3)
+# print('7%3 : ', 7%3)
+# print('8%3 : ', 8%3)
+
+# print()
+# print('-0%3 : ', -0%3)
+# print('-1%3 : ', -1%3)
+# print('-2%3 : ', -2%3)
+# print('-3%3 : ', -3%3)
+# print('-4%3 : ', -4%3)
+# print('-5%3 : ', -5%3)
+# print('-6%3 : ', -6%3)
+# print('-7%3 : ', -7%3)
+# print('-8%3 : ', -8%3)
+
+
+# # the number which trying to get moduleo
+# for i in range(9):
+#     print('{0}%9 : '.format(i), i%9)
+
+# ...
+# days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+# print(days[ (1) % len(days) ])
+# print(days[ (7) % len(days) ])
+# print(days[ (6) % len(days) ])
+
+# print(days[ (6+1) % len(days) ]) # Sun + 1 = Mon
+# print(days[ (6+3) % len(days) ]) # Sun + 3 = Wed
+
+# print(days[ (1-1) % len(days) ]) # Tue - 1 = Mon
+# print(days[ (1-5) % len(days) ]) # Tue - 5 = Fri
+# print(days[ (1-14) % len(days) ]) # Tue - 14 = Tue
+# print(days[ (1-15) % len(days) ]) # Tue - 15 = Mon
+
+
+a = 2
+b = 3
+
+tmp = a
+a = b
+b = tmp
+
+
+a = 2
+b = 3
+b, a = a, b
+
+
+# help(str)
+
+
+## Lists, Tuples, Dictionaries.
+TODO ...
+
+
 ## License
 [![License](https://img.shields.io/github/license/salalba/matplotlib)](https://github.com/SalAlba/matplotlib/blob/master/LICENSE)
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details, Copyright 2020 © <a href="https://github.com/SalAlba/" target="_blank">Salem Albarudy</a>.
 
-
-## Lists, Tuples, Dictionaries.
-TODO ...
 
 ## Resources
 
