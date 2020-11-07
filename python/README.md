@@ -484,143 +484,303 @@ func_2('ada', 33, show=False, age=44)
 
 ```
 ## Scalar types
-TODO ...
+<!-- 
 
 https://stackoverflow.com/questions/30340555/are-numbers-considered-objects-in-python
 
 https://stackoverflow.com/questions/15376509/when-is-i-x-different-from-i-i-x-in-python/15376520#15376520
 
 https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
+ -->
+
+A scalar is a type that can have a single value such as 42, 3.14, or 'Hi there'. 
+
+The commonly used scalar types in Python are:
+
+* int : Any integer.
+
+* float : Floating point number (64 bit precision).
+
+* complex : Numbers with an optional imaginary component.
+
+* bool : True, False.
+
+* str : A sequence of characters (can contain unicode characters).
+
+* bytes : A sequence of unsigned 8-bit entities, used for manipulating binary data.
+
+* NoneType (None) : Python's null, every instance of None is of NoneType.
+
+> Python doesn't have  primitive types, every type is an object.
 
 
 
 ``` python
-int_ = 123
-float_ = 3.14
 
-
-print(int_)
-print(type(int_))
-print(isinstance(int_, object))
-print()
-
-
-print(float_)
-print(type(float_))
-print(isinstance(float_, object))
-print()
-
-
-```
-
-
-
-
-'''
 int_ = 123
 float_ = 3.14
 complex_ = 1 + 2j
-str_ = 'ada'
+str_ = 'Salem'
+bool_ = True
+none_ = None
 
 
 print(int_)
-print(type(int_))
-print('Is object :', isinstance(int_, object))
+print(type(int_)) #  <class 'int'>
+print('Is object :', isinstance(int_, object)) # True
 print()
 
 
 print(float_)
-print(type(float_))
-print('Is object :', isinstance(float_, object))
+print(type(float_)) # <class 'float'>
+print('Is object :', isinstance(float_, object)) # True
 print()
 
 print(complex_)
-print(type(complex_))
-print('Is object :', isinstance(complex_, object))
+print(type(complex_)) # <class 'complex'>
+print('Is object :', isinstance(complex_, object)) # True
 print()
 
 
 print(str_)
-print(type(str_))
-print('Is object :', isinstance(str_, object))
+print(type(str_)) # <class 'str'>
+print('Is object :', isinstance(str_, object)) # True
 print()
 
-# def f(x):
-#     x = 2
-#     return x
 
-# z = 3
-
-
-# print(z)
-# f(z)
-# print(z)
-
-import sys
-
-a = sys.maxsize
-
-print(a)
-print(type(a))
-print('Is object :', isinstance(a, object))
+print(bool_)
+print(type(bool_)) # <class 'bool'>
+print('Is object :', isinstance(bool_, object)) # True
+print()
 
 
-a = 2 ** 128 # in mem is bigint
+print(none_)
+print(type(none_)) # <class 'NoneType'>
+print('Is object :', isinstance(none_, object)) # True
+print()
 
-print(a)
-print(type(a))
-print('Is object :', isinstance(a, object))
+```
+
+### Operators
+quick view of operations can be done on types.
+
+**Assignment**
+we use for that the equal symbol `=`.
+
+``` python
+
+# name_of_var = some_value
+
+a = 12
+
+```
+
+**Arithmetic Operators**
+
+``` python
+
+'''
++    Addition
+-    Subtraction
+*    Multiplication
+/    Division
+//   Floor Division
+%    Modulo
+**   Power
+'''
+
+print(1 + 2)
+print(3.14 + 5)
+
+print(5 - 3)
+print(2 - 3.14)
+
+print(6 * 2)
+
+print(2 ** 3)
+print(4 ** 2)
+
+print(4/2)
+print(8/4)
+
+print(4//2)
+print(8//3)
+
+print(4%2)
+print(4%3)
+print(2%4)
+print(1%4)
+print(3%4)
+
+```
 
 
-print(type(1))
-print(type(1.))
+more about modulo
+
+``` python
+# https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
+
+print('0%3 : ', 0%3)
+print('1%3 : ', 1%3)
+print('2%3 : ', 2%3)
+print('3%3 : ', 3%3)
+print('4%3 : ', 4%3)
+print('5%3 : ', 5%3)
+print('6%3 : ', 6%3)
+print('7%3 : ', 7%3)
+print('8%3 : ', 8%3)
+
+print()
+print('-0%3 : ', -0%3)
+print('-1%3 : ', -1%3)
+print('-2%3 : ', -2%3)
+print('-3%3 : ', -3%3)
+print('-4%3 : ', -4%3)
+print('-5%3 : ', -5%3)
+print('-6%3 : ', -6%3)
+print('-7%3 : ', -7%3)
+print('-8%3 : ', -8%3)
+```
+
+
+where can we use modulo
+
+``` python
+
+days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+print(days[ (1) % len(days) ])
+print(days[ (7) % len(days) ])
+print(days[ (6) % len(days) ])
+
+print(days[ (6+1) % len(days) ]) # Sun + 1 = Mon
+print(days[ (6+3) % len(days) ]) # Sun + 3 = Wed
+
+print(days[ (1-1) % len(days) ]) # Tue - 1 = Mon
+print(days[ (1-5) % len(days) ]) # Tue - 5 = Fri
+print(days[ (1-14) % len(days) ]) # Tue - 14 = Tue
+print(days[ (1-15) % len(days) ]) # Tue - 15 = Mon
+
+```
+
+
+**Comparison Operators**
+``` python
 
 '''
 
+==   Equal To
+>    Greater Than
+>=   Greater Than or Equal To
+<    Less Than
+<=   Less Than or Equal To
+!=   Not Equal
 
-# https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
-# print('0%3 : ', 0%3)
-# print('1%3 : ', 1%3)
-# print('2%3 : ', 2%3)
-# print('3%3 : ', 3%3)
-# print('4%3 : ', 4%3)
-# print('5%3 : ', 5%3)
-# print('6%3 : ', 6%3)
-# print('7%3 : ', 7%3)
-# print('8%3 : ', 8%3)
+'''
 
-# print()
-# print('-0%3 : ', -0%3)
-# print('-1%3 : ', -1%3)
-# print('-2%3 : ', -2%3)
-# print('-3%3 : ', -3%3)
-# print('-4%3 : ', -4%3)
-# print('-5%3 : ', -5%3)
-# print('-6%3 : ', -6%3)
-# print('-7%3 : ', -7%3)
-# print('-8%3 : ', -8%3)
+print(4 == 4)
+print(3 == 1)
+print(True == False)
+print(3.14 == 3.14)
+print(1 == 1.0)
+
+print(1 < 1.0)
+print(True > False)
 
 
-# # the number which trying to get moduleo
-# for i in range(9):
-#     print('{0}%9 : '.format(i), i%9)
+print( 1 < 2 < 3)
+print( 5 >= 4 == 4)
+
+```
+
+**Boolean Operators**
+``` python
+and
+or
+not
+```
+
+
+### Converting types 
+
+
+``` python
+
+int_ = 1
+float_ = 1.0
+complex_ = 1 + 0j
+str_ = 'Salem'
+bool_ = True
+none_ = None
+
+
+print(int(int_))      # 1
+print(float(int_))    # 1.0
+print(complex(int_))  # (1+0j)
+print(str(int_))      # '1'
+print(bool(int_))     # True
+print(bool(0))        # False
+print()
+
+print(int(float_))      # 1
+print(float(float_))    # 1.0
+print(complex(float_))  # (1+0j)
+print(str(float_))      # 1.0
+print(bool(float_))     # True
+print(bool(0.0))        # False
+print()
+
+# print(int(complex_))      # TypeError: can't convert complex to int
+# print(float(complex_))    # TypeError: can't convert complex to float
+print(complex(complex_))  # (1+0j)
+print(str(complex_))      # (1+0j)
+print(bool(complex_))     # True
+print(bool((0+0j)))       # False
+print()
+
+# print(int(str_))      # ValueError: invalid literal for int() with base 10: 'Salem'
+# print(float(str_))    # ValueError: could not convert string to float: 'Salem'
+# print(complex(str_))  # ValueError: complex() arg is a malformed string
+print(int('1'))        # 1
+print(float('1'))      # 1.0
+print(complex('1'))    # (1+0j)
+print(str(str_))        # Salem
+print(bool(str_))       # True
+print(bool(''))         # False
+print()
+
+print(int(True))      # 1
+print(float(True))    # 1.0
+print(complex(True))  # (1+0j)
+print(str(True))      # True
+print(bool(True))     # True
+print()
+
+print(int(False))      # 0
+print(float(False))    # 0.0
+print(complex(False))  # (0+0j)
+print(str(False))      # False
+print(bool(False))     # False
+print()
+
+# print(int(none_))      # TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+# print(float(none_))    # TypeError: float() argument must be a string or a number, not 'NoneType'
+# print(complex(none_))  # TypeError: complex() first argument must be a string or a number, not 'NoneType'
+print(str(none_))      # 'None'
+print(bool(none_))     # False
+print()
+
+```
+
+
+> help(str)
+> help(int)
+
+
+**Replace values**
+``` python
 
 # ...
-# days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-
-# print(days[ (1) % len(days) ])
-# print(days[ (7) % len(days) ])
-# print(days[ (6) % len(days) ])
-
-# print(days[ (6+1) % len(days) ]) # Sun + 1 = Mon
-# print(days[ (6+3) % len(days) ]) # Sun + 3 = Wed
-
-# print(days[ (1-1) % len(days) ]) # Tue - 1 = Mon
-# print(days[ (1-5) % len(days) ]) # Tue - 5 = Fri
-# print(days[ (1-14) % len(days) ]) # Tue - 14 = Tue
-# print(days[ (1-15) % len(days) ]) # Tue - 15 = Mon
-
-
 a = 2
 b = 3
 
@@ -629,12 +789,11 @@ a = b
 b = tmp
 
 
+# ...
 a = 2
 b = 3
 b, a = a, b
-
-
-# help(str)
+```
 
 
 ## Lists, Tuples, Dictionaries.
