@@ -45,6 +45,7 @@ the learning rate hyperparameter.
 
 **Resources**
 
+* [IBM]  https://www.ibm.com/cloud/learn/gradient-descent
 * [[src1] Hands on ML with tens. and sklearn](#)
 * [[src2]](https://medium.com/@rrfd/what-is-a-cost-function-gradient-descent-examples-with-python-16273460d634)
 
